@@ -21,46 +21,69 @@
   }
 
     variable "vpc_name" {
-    type = string
+    type        = string
     description = "Name of the VPC"
-    default = "default"
+    default     = "default"
   }
 
   variable "vpc_cidr_block" {
-    type = string
+    type        = string
     description = "CIDR block for VPC"
   }
 
     variable "vpc_enable_dns_support" {
-    type = bool
+    type        = bool
     description = "A boolean flag to enable/disable DNS support in the VPC"
-    default = true
+    default     = true
   }
 
   variable "vpc_enable_dns_hostnames" {
-    type = bool
+    type        = bool
     description = "A boolean flag to enable/disable DNS hostnames in the VPC"
-    default = false
+    default     = false
   }
 
   variable "vpc_enable_network_address_usage_metrics" {
-    type = bool
+    type        = bool
     description = "Indicates whether Network Address Usage metrics are enabled for your VPC"
-    default = false
+    default     = false
   }
 
   variable "availability_zones" {
-    type = list(string)
+    type        = list(string)
     description = "List of AZs to create subnets in"
-    default = ["a", "b", "c"]
+    default     = ["a", "b", "c"]
   }
 
   variable "public_subnets" {
-    type = list(string)
+    type        = list(string)
     description = "CIDR blocks for public subnets"
   }
 
   variable "private_subnets" {
-    type = list(string)
+    type        = list(string)
     description = "CIDR blocks for private subnets"
+  }
+
+  variable "ec2_ami_name" {
+    type        = string
+    description = "Search string/name for AMI"
+    default     = "al2023-ami-2023.*-x86_64"
+  }
+
+  variable "ec2_instance_az" {
+    type        = string 
+    description = "AZ where to launch EC2 Instance"
+    default     = "a"
+  }
+
+  variable "ec2_instance_key" {
+    type        = string
+    description = "EC@ Instance Key"
+  }
+
+  variable "ec2_instance_size" {
+    type        = string
+    description = "Size of the EC2 Instance"
+    default     = "t2.micro"
   }
