@@ -59,3 +59,8 @@
     type = list(string)
     description = "CIDR blocks for public subnets"
   }
+
+  variable "private_subnets" {
+    type = list(string)
+    description = "CIDR blocks for private subnets"
+  }
