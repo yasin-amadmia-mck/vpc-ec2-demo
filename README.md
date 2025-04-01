@@ -5,6 +5,7 @@
 	- An Internet GW to route traffic for public subnets
 	- A NAT GW associated with first public subnet to route traffic for private subnets
 	- An EC2 Instance that has port 80 incoming and ALL outgoing open
+    - Terraform uses local state file. For collaboration, it would be best to use central place like S3.
 
 ###  How to run
 - This TF provider expects `aws_region`, `aws_access_key` and `aws_secret_key`
