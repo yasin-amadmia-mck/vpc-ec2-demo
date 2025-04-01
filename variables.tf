@@ -48,3 +48,14 @@
     description = "Indicates whether Network Address Usage metrics are enabled for your VPC"
     default = false
   }
+
+  variable "availability_zones" {
+    type = list(string)
+    description = "List of AZs to create subnets in"
+    default = ["a", "b", "c"]
+  }
+
+  variable "public_subnets" {
+    type = list(string)
+    description = "CIDR blocks for public subnets"
+  }
